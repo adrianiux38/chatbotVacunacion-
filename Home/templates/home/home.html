@@ -38,6 +38,8 @@
 								<th class="column3">Codigo Postal</th>
 								<th class="column4">Whatsapp</th>
 								<th class="column5">Es_medico</th>
+								<th class="column6">Apoya_morena</th>
+								<th class="column7">Partido Apoyado</th>
 							</tr>
 						</thead>
 						{% for registros in registro %}
@@ -48,6 +50,23 @@
 									<td class="column3">{{registros.cp}}</td>
 									<td class="column4">{{registros.sender}}</td>
 									<td class="column5">{{registros.pertenece_medico}}</td>
+									<td class="column6">{{registros.apoya_morena}}</td>
+									{%if registros.partido_apoyado%}
+										{%if registros.partido_apoyado == '1'%}
+											<td class="column7">PRI</td>
+										{%elif registros.partido_apoyado == '2'%}
+											<td class="column7">VERDE</td>
+										{%elif registros.partido_apoyado == '3'%}
+											<td class="column7">PAN</td>
+										{%elif registros.partido_apoyado == '4'%}
+											<td class="column7">PRD</td>
+										{%elif registros.partido_apoyado == '5'%}
+											<td class="column7">PT</td>
+										{%else%}
+											<td class="column7">NONE</td>
+										{%endif%}
+
+									{%endif%}
 								</tr>
 						</tbody>
 						{% endfor %}

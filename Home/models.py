@@ -10,6 +10,8 @@ class RegistrosVacunacion(models.Model):
     edad = models.CharField(max_length=10, blank=True, null=True)
     delegacion = models.TextField(blank=True, null=True)
     pertenece_medico = models.CharField(max_length=2, blank=True, null=True)
+    partido_apoyado = models.CharField(max_length=2, blank=True, null=True)
+    apoya_morena = models.CharField(max_length=2, blank=True, null=True)
 
     class Meta:
         managed = False
